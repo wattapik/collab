@@ -1,0 +1,181 @@
+body {
+    background-color: #222;
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+#viewer {
+    width: 100vw;
+    height: 100vh;
+    background-color: #222;
+    background-image: url("image/su.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    image-rendering: pixelated;
+}
+
+.r6o-editor {
+	z-index: 3;
+	height: auto;
+}
+
+.r6o-widget.comment {
+	font-size: 1.5em;
+	background-color: #333
+}
+
+.r6o-editor .r6o-arrow:after {
+	background-color: #333;
+	border: 3px white solid;
+}
+
+.r6o-editor .r6o-editor-inner .r6o-widget {
+	border: 3px white solid;
+}
+
+.r6o-editor .r6o-editor-inner {
+	background-color: transparent !important;
+}
+
+.r6o-footer {
+	display: none;
+}
+
+div {
+    color: white;
+}
+
+a {
+    color: white;
+    font-weight: bold;
+}
+
+#here-now {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 1.5vh;
+    color: white;
+    padding: 15px;
+    z-index: 2;
+}
+
+#question {
+    font-size: 3vh;
+    width: 3vh;
+    height: 3vh;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    border: 3px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 10px;
+}
+
+#question img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+
+#banner {
+        max-width: 100%;
+}
+#modal {
+    display: none;
+    font-size: 18pt;
+    position: fixed;
+    top: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px 10px #000;
+    background-color: #333;
+    align-items: center;
+    z-index: 4;
+    width: 80%;
+    height: 80%;
+    overflow-y: auto;
+}
+
+#modal-content {
+    position: relative;
+    padding: 33px;
+    text-align: center;
+    max-height: 100%;
+    font-size: 15pt;
+}
+
+@keyframes animateBg {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.rainbow {
+    background: linear-gradient(90deg, #f1672b, #fea419, #efd515, #89d842, #35c2f9, #9b5fe0, #ff68cf, #f1672b, #fea419, #efd515, #89d842, #35c2f9, #9b5fe0, #ff68cf, #f1672b, #fea419, #efd515, #89d842, #35c2f9, #9b5fe0, #ff68cf, #f1672b);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    animation: animateBg 5s infinite linear;
+    background-clip: text;
+    color: transparent;
+}
+
+#close-button {
+    position: absolute;
+    font-size: 3rem;
+    top: 15px;
+    right: 30px;
+    cursor: pointer;
+    width: 3vh;
+    height: 3vh;
+    background-color: #333;
+    color: #fff;
+    border: 3px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 10px;
+}
+
+#open-button {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1081px) {
+	#viewer {
+		width: 100vw;
+		height: 66vh;
+	}
+	#modal-content {
+	    font-size: 20pt;
+	}
+}

@@ -1,0 +1,72 @@
+[{
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "id": "#a88b22d0-6106-4872-9435-c78b5e890000",
+  "type": "Annotation",
+  "body": [{
+    "type": "TextualBody",
+    "value": "<a href = 'https://sketchersunited.org/posts/112'>ruler</a> by <a href = 'https://sketchersunited.org/users/9'>@username</a>",
+    "format" : "text/html",
+    "language" : "en"
+  }],
+  "target": {
+    "selector": {
+      "type": "FragmentSelector",
+      "conformsTo": "http://www.w3.org/TR/media-frags/",
+      "value": "xywh=pixel:0,0,1000,1000"
+    }
+  }
+},
+  {
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#a88b22d0-6106-4872-9435-c78b5e890001",
+    "type": "Annotation",
+    "body": [{
+      "type": "TextualBody",
+      "value": "<a href = 'https://sketchersunited.org/posts/112'>screwdriver</a> by <a href = 'https://sketchersunited.org/users/9'>@username</a>",
+      "format" : "text/html",
+      "language" : "en"
+    }],
+    "target": {
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:0,1000,1000,1000"
+      }
+    }
+  },
+  {
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#a88b22d0-6106-4872-9435-c78b5e890002",
+    "type": "Annotation",
+    "body": [{
+      "type": "TextualBody",
+      "value": "<a href = 'https://sketchersunited.org/posts/112'>hammer</a> by <a href = 'https://sketchersunited.org/users/9'>@username</a>",
+      "format" : "text/html",
+      "language" : "en"
+    }],
+    "target": {
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:1000,0,1000,1000"
+      }
+    }
+  },
+  {
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#a88b22d0-6106-4872-9435-c78b5e890003",
+    "type": "Annotation",
+    "body": [{
+      "type": "TextualBody",
+      "value": "<a href = 'https://sketchersunited.org/posts/112'>drill</a> by <a href = 'https://sketchersunited.org/users/9'>@username</a>",
+      "format" : "text/html",
+      "language" : "en"
+    }],
+    "target": {
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:1000,1000,1000,1000"
+      }
+    }
+  }]
