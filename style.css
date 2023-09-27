@@ -173,7 +173,7 @@ a {
 @media screen and (max-width: 1081px) {
 	#viewer {
 		width: 100vw;
-		height: 66vh;
+		height: 100vh;
 	}
 	#modal-content {
 	    font-size: 20pt;
