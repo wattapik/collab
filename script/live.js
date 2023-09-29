@@ -1,5 +1,5 @@
 const clientCountElement = document.getElementById('clientCount');
-const socket = new WebSocket('wss://sketchersunitedcollab.com/funsocket');
+const socket = new WebSocket('ws://localhost:8080/funsocket');
 
 socket.addEventListener('message', (event) => {
     const clientCount = parseInt(event.data);

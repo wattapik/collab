@@ -10,6 +10,7 @@ function load_image(image) {
             tileSource: image.tileSource,
             x: image.x,
             y: image.y,
+            opacity: 1,
             success: () => {
                 resolve();
             },
@@ -40,7 +41,7 @@ fetch('image/image.txt')
                     y: parseInt(parts[2]),
                     red: parseInt(parts[3]),
                     blue: parseInt(parts[4]),
-                    green: parseInt(parts[5])
+                    green: parseInt(parts[5]),
                 };
 
                 const promise = load_image(dictionary);
@@ -54,7 +55,7 @@ fetch('image/image.txt')
     })
     .then(() => {
         let all_filters = []
-        let all_nav_filters = []
+
         dictionaries.forEach(image => {
             let filter = {
                 items: viewer.world.getItemAt(image.imageCount),
@@ -75,33 +76,12 @@ fetch('image/image.txt')
                 ]
             }
 
-            let nav_filter = {
-                items: viewer.navigator.world.getItemAt(image.imageCount),
-                processors: [
-                    function (context, callback) {
-                        Caman(context.canvas, function () {
-                            this.colorize(image.red, image.green, image.blue, 50);
-                            this.render(callback);
-                        });
-                    }
-                ]
-            }
-
             all_filters.push(filter)
-            all_nav_filters.push(nav_filter)
         });
-
-
-        viewer.navigator.setFilterOptions = viewer.setFilterOptions;
 
         viewer.setFilterOptions({
             filters: all_filters
         });
-
-        viewer.navigator.setFilterOptions({
-            filters: all_nav_filters
-        });
-
 
 
     })
