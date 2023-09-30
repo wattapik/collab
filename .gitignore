@@ -9,3 +9,4 @@ image/script/lib64
 image/script/pyvenv.cfg
 upload.sh
 annotations
+annotations.w3c.json
