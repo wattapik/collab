@@ -1,8 +1,10 @@
 #!/bin/bash
+python3.11 -m venv .
+
 source script/bin/activate
 
-# Xvfb :99 -screen 0 1280x1024x24 &
-# export DISPLAY=:99
+Xvfb :99 -screen 0 1280x1024x24 &
+export DISPLAY=:99
 
 pip install pillow
 pip install requests
