@@ -1,6 +1,7 @@
 const anno = OpenSeadragon.Annotorious(viewer);
-anno.readOnly = true
-anno.loadAnnotations('annotations/initial.w3c.json');
+anno.readOnly = true;
+anno.escape = false;
+anno.loadAnnotations('annotations/annotations.w3c.json');
 let annotationText = ""
 
 function renderHTML()
@@ -26,3 +27,4 @@ viewer.addHandler('update-viewport', function(event)
 {
     renderHTML()
 });
+

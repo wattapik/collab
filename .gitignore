@@ -1,6 +1,11 @@
-.idea
-image/dzi
-image/original
-image/script
 image/image.txt
-.venv
+image/dzi
+image/dzi_edited
+image/original
+image/script/bin
+image/script/include
+image/script/lib
+image/script/lib64
+image/script/pyvenv.cfg
+upload.sh
+annotations

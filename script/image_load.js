@@ -2,8 +2,6 @@ let dictionaries = []
 const imagePromises = [];
 let image_count = 0
 
-Caman.Store.put = function() {};
-
 function load_image(image) {
     return new Promise((resolve, reject) => {
         viewer.addTiledImage({
@@ -31,17 +29,17 @@ fetch('image/image.txt')
     .then(text => {
         const lines = text.split('\n');
         lines.forEach(line => {
-            if (!line.startsWith('#')) {
+            if (!line.startsWith('#') && line.length > 0) {
                 const parts = line.split(' ');
 
                 const dictionary = {
                     imageCount: image_count,
-                    tileSource: 'image/dzi/' + parts[0] + '/' + parts[0] + '.dzi',
+                    tileSource: 'image/dzi_edited/' + parts[0] + '/' + parts[0] + '.dzi',
                     x: parseInt(parts[1]),
                     y: parseInt(parts[2]),
                     red: parseInt(parts[3]),
-                    blue: parseInt(parts[4]),
-                    green: parseInt(parts[5]),
+                    green: parseInt(parts[4]),
+                    blue: parseInt(parts[5]),
                 };
 
                 const promise = load_image(dictionary);
@@ -62,14 +60,13 @@ fetch('image/image.txt')
                 processors: [
                     function (context, callback) {
                         Caman(context.canvas, function () {
-                            this.colorize(image.red, image.green, image.blue, 50);
+                            this.colorize(image.red, image.green, image.blue, 80);
                             this.render(callback);
                         });
-                    }
-                    // },
+                    },
                     // function (context, callback) {
                     //     Caman(context.canvas, function () {
-                    //         this.contrast(10);
+                    //         this.contrast(100);
                     //         this.render(callback);
                     //     });
                     // }
@@ -79,9 +76,9 @@ fetch('image/image.txt')
             all_filters.push(filter)
         });
 
-        viewer.setFilterOptions({
-            filters: all_filters
-        });
+        // viewer.setFilterOptions({
+        //     filters: all_filters
+        // });
 
 
     })

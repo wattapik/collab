@@ -12,7 +12,7 @@ body {
     background-color: #222;
     background-image: url("image/su.png");
     background-repeat: no-repeat;
-    background-size: 1000px;
+    background-size: 400px;
     background-position: center;
     image-rendering: pixelated;
 }
@@ -170,10 +170,10 @@ a {
     cursor: pointer;
 }
 
-@media screen and (max-width: 1081px) {
+@media screen and (max-width: 1081px) and (-webkit-min-device-pixel-ratio: 2) {
 	#viewer {
 		width: 100vw;
-		height: 100vh;
+		height: 66vh;
 	}
 	#modal-content {
 	    font-size: 20pt;
