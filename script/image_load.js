@@ -49,38 +49,6 @@ fetch('image/image.txt')
                 image_count++;
             }
         });
-        return Promise.all(imagePromises);
-    })
-    .then(() => {
-        let all_filters = []
-
-        dictionaries.forEach(image => {
-            let filter = {
-                items: viewer.world.getItemAt(image.imageCount),
-                processors: [
-                    function (context, callback) {
-                        Caman(context.canvas, function () {
-                            this.colorize(image.red, image.green, image.blue, 80);
-                            this.render(callback);
-                        });
-                    },
-                    // function (context, callback) {
-                    //     Caman(context.canvas, function () {
-                    //         this.contrast(100);
-                    //         this.render(callback);
-                    //     });
-                    // }
-                ]
-            }
-
-            all_filters.push(filter)
-        });
-
-        // viewer.setFilterOptions({
-        //     filters: all_filters
-        // });
-
-
     })
     .catch(error => {
         console.error('Error:', error);
