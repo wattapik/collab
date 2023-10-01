@@ -1,5 +1,3 @@
-Caman.Store.put = function() {};
-
 const viewer = OpenSeadragon({
      id: "viewer",
      showZoomControl: false,
