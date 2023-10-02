@@ -5,10 +5,12 @@ socket.addEventListener('message', (event) => {
     if(event.data.toString().length < 5) {
         const clientCount = parseInt(event.data);
 
-        let append = " people"
+        let append = " Sketchers"
         if (clientCount === 1) {
-            append = " person"
+            clientCountElement.textContent = "Just you!";
         }
-        clientCountElement.textContent = clientCount.toString() + append;
+        else {
+            clientCountElement.textContent = clientCount.toString() + append;
+        }
     }
 });
