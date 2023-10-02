@@ -13,7 +13,8 @@ def process_line(line):
             "type": "TextualBody",
             "value": folder_name,
             "format": "text/html",
-            "language": "en"
+            "language": "en",
+            "tag": folder_name
         }],
         "target": {
             "selector": {
@@ -28,12 +29,12 @@ def process_line(line):
     return annotation
 
 annotations = []
-with open('../image.txt', 'r') as file:
+with open('image.txt', 'r') as file:
     lines = file.readlines()
     for line in lines:
         annotations.append(process_line(line))
 
-with open('../../annotations/annotations.w3c.json', 'w') as output_file:
+with open('../annotations/annotations.w3c.json', 'w') as output_file:
     json.dump(annotations, output_file, indent=2)
 
 print("Annotations JSON file created.")
