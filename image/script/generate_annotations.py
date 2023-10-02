@@ -1,25 +1,21 @@
 import json
 import uuid
-import requests
+import aiohttp
+import asyncio
 
-def get_post_data(folder_name):
+async def get_post_data(session, folder_name):
     url = f"https://sketchersunited.org/posts/{folder_name.split('by')[0]}"
     headers = {"Accept": "text/json"}
-    response = requests.get(url, headers=headers)
-    if response.status_code == 200:
-        return response.json()
-    return None
+    async with session.get(url, headers=headers) as response:
+        if response.status == 200:
+            return await response.json()
+        return None
 
-with open('image.txt', 'r') as file:
-    lines = file.readlines()
-
-annotations = []
-
-for line in lines:
+async def process_line(session, line):
     folder_name, x, y, _, _, _ = line.strip().split()
     annotation_id = str(uuid.uuid4())
 
-    post_data = get_post_data(folder_name)
+    post_data = await get_post_data(session, folder_name)
     if post_data:
         annotation_text = f'🖼️ <a href="https://sketchersunited.org/posts/{post_data["post"]["id"]}">{post_data["post"]["title"]}</a> <br>👤 <a href="https://sketchersunited.org/users/{post_data["post"]["profile"]["id"]}">@{post_data["post"]["profile"]["username"]}</a>'
     else:
@@ -44,10 +40,22 @@ for line in lines:
         }
     }
 
-    annotations.append(annotation)
     print(f"Appended annotation for {folder_name}")
+    return annotation
 
-with open('../annotations/annotations.w3c.json', 'w') as output_file:
-    json.dump(annotations, output_file, indent=2)
+async def main():
+    annotations = []
+    async with aiohttp.ClientSession() as session:
+        with open('image.txt', 'r') as file:
+            lines = file.readlines()
 
-print("Annotations JSON file created.")
+        tasks = [process_line(session, line) for line in lines]
+        annotations = await asyncio.gather(*tasks)
+
+    with open('../annotations/annotations.w3c.json', 'w') as output_file:
+        json.dump(annotations, output_file, indent=2)
+
+    print("Annotations JSON file created.")
+
+# Run the asynchronous code
+asyncio.run(main())

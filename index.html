@@ -1,107 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!--
-                  .:/+++oo+/:.
-              `:++:.` `s--s/.:++-
-            `/o-     `s-   /o. `:o/
-           -s:      `s:     .o/   :s.
-          -s`      `s:        :s-  .s.
-         `y.       o/          `o+` -s
-         :o       o+             -s: s:
-         ++      ++               `/oo/
-         /o     +o                `.+y:
-         `y.   /o           `-:/++/:/y`
-          -s` /o`     `-:+++/-.    .s-
-           -s/s`.-/+++/-.         -s-
-            `+ss/-`             -o/`
-              `:o+-.        .:+o:`
-                 `-:++++++++:-`
-    -->
-         
-    <meta charset="UTF-8">
-    <title>Sketchers United Collaboration</title>
+	<!--
+                   .:/+++oo+/:.
+               `:++:.` `s--s/.:++-
+             `/o-     `s-   /o. `:o/
+            -s:      `s:     .o/   :s.
+           -s`      `s:        :s-  .s.
+          `y.       o/          `o+` -s
+          :o       o+             -s: s:
+          ++      ++               `/oo/
+          /o     +o                `.+y:
+          `y.   /o           `-:/++/:/y`
+           -s` /o`     `-:+++/-.    .s-
+            -s/s`.-/+++/-.         -s-
+             `+ss/-`             -o/`
+               `:o+-.        .:+o:`
+                  `-:++++++++:-`
+     -->
 
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
+	<meta charset="UTF-8">
+	<title>Sketchers United Collaboration</title>
 
-    <link rel="stylesheet" href="script/openseadragon/annotorious.min.css">
-    <link rel="stylesheet" href="style.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
 
-    <script src="script/openseadragon/openseadragon.min.js"></script>
-    <script src="script/openseadragon/openseadragon-smartScrollZoom.js"></script>
-    <script src="script/openseadragon/openseadragon-annotorious.min.js"></script>
+	<link rel="stylesheet" href="script/openseadragon/annotorious.min.css">
+	<link rel="stylesheet" href="style.css">
+
+	<script src="script/openseadragon/openseadragon.min.js"></script>
+	<script src="script/openseadragon/openseadragon-smartScrollZoom.js"></script>
+	<script src="script/openseadragon/openseadragon-annotorious.min.js"></script>
 </head>
 <body>
-    <div id="viewer"></div>
+<div id = "container>">
+	<div id="viewer"></div>
+	<div id = "mobile-banner">
+		<img src = "image/banner.png">
+	</div>
+</div>
 
-    <!-- MODAL -->
-   	<div id="modal-overlay"></div>
-   	
-   	<div id="modal">
-   		<div id="modal-content">
-   			 <span id="close-button">&times;</span>
-             <br>
+<!-- MODAL -->
+<div id="modal-overlay"></div>
 
-             <img src = "image/banner.png" id = "banner" alt="A banner for the Sketchers United 4th anniversary collab.">
-	         <h1>Sketchers United 4th Anniversary Collaboration</h1>
+<div id="modal">
+	<div id="modal-content">
+		<span id="close-button">&times;</span>
+		<br>
 
-	         <p>❤️🧡💛💚💙💜
-	         <h2>❓ What is this?</h2>
-	         <p>For the 4th anniversary of Sketchers United, we are going to (attempt to) line up submitted artwork from Sketchers United members such that it resembles a gigantic Sketchers United logo.
-	         <br>The shape won't seem very evident at the beginning, however as more submissions are made the more we can approximate the shape.
-	         <br>You can use the view here to look at the submitted artworks and view the construction of the collaborative Sketchers United logo.
-	         <br>
-	         <br>We aim to update the view every few days with the newest submissions.</p>
+		<img src = "image/banner.png" id = "banner" alt="A banner for the Sketchers United 4th anniversary collab.">
+		<h1>Sketchers United 4th Anniversary Collaboration</h1>
 
-             <h2>🌐 How do I use this page?</h2>
-             <p>Use either the mouse wheel or your fingers to zoom in and out of the view.
-             <br> (Not yet implemented) You can tap on the image to see who drew it and get a link to the post.
-             <br>
-             <br>ℹ️ The view may get somewhat laggy on a mobile device. For the best experience use a desktop computer.
-             <br>This is unavoidable due to the number of images downloaded and shown.
-             <br>It may also fail to load images correctly on Chrome on newer versions of Android, leading to the page freezing. In this case, use the Firefox browser or a desktop computer.
+		<p>❤️🧡💛💚💙💜
+		<h2>❓ What is this?</h2>
+		<p>For the 4th anniversary of Sketchers United, we are going to (attempt to) line up submitted artwork from Sketchers United members such that it resembles a gigantic Sketchers United logo.
+			<br>The shape won't seem very evident at the beginning, however as more submissions are made the more we can approximate the shape.
+			<br>You can use the view here to look at the submitted artworks and view the construction of the collaborative Sketchers United logo.
+			<br>
+			<br>We aim to update the view every day with the newest submissions.
+			<br>The more submissions we get, the higher the resolution of the logo we can build, meaning the better it looks!</p>
 
-	         <h2>☝️ How do I join?</h2>
-	         <p><b>📩 Submit an entry under the hashtag <a href = "https://sketchersunited.org/tags/sucollab" class = "rainbow">#sucollab</a> to enter.</b>
-	         <br>Entries can contain any subject matter however inappropriate entries will be discarded.
+		<h2>🌐 How do I use this page?</h2>
+		<p>Use either the mouse wheel or your fingers to zoom in and out of the view.
+			<br>You can tap on the image to see who drew it and get a link to the post.
+			<br>
+			<br>ℹ️ The view may get somewhat laggy on a mobile device.
+			<br>This is unavoidable due to the number of images downloaded and shown. For the best experience use a desktop computer.
+			<br>It may also fail to load images correctly on Chrome on newer versions of Android, leading to the page freezing. In this case, use the Firefox browser or a desktop computer.
 
-	         <p><b> You can submit a single entry on your own.</b>
-	         <br>You are allowed to submit more than one entry if you are working with friends to submit a collaborative entry.
-	         <br>For example, you can submit an entry with only your own artwork, and then submit another entry which contains your work and the work of others that was created collaboratively.
+		<h2>☝️ How do I join?</h2>
+		<p><b>📩 Submit an entry under the hashtag <a href = "https://sketchersunited.org/tags/sucollab" class = "rainbow">#sucollab</a> to enter.</b>
+			<br>Entries can contain any subject matter however inappropriate entries will be discarded.
 
-	         <p><b>⚠️ Make sure that it is square and at least 1000 pixels wide and high.</b>
-	         <br>We will be using all of the entries where possible, which means if your entry does not fit these requirements it will be cropped and upscaled, which may be destructive to your art.</p>
+		<p><b> You can submit a single entry on your own.</b>
+			<br>You are allowed to submit more than one entry if you are working with friends to submit a collaborative entry.
+			<br>For example, you can submit an entry with only your own artwork, and then submit another entry which contains your work and the work of others that was created collaboratively.
 
-	         <h2>💌 Who can I contact about this?</h2>
-	         <p>General questions about the collaboration can be sent to <a href = "https://sketchersunited.org/users/12271" class = "rainbow">@pelunkey</a> and <a href = "https://sketchersunited.org/users/9" class = "rainbow">@username</a>.
-	         <br>This website is run by <a href ="https://sketchersunited.org/users/9" class = "rainbow">@username</a>. If there are any technical issues with the site please send me a message.
-	         <br>The website is still under construction and there may be issues.</p>
+		<p><b>⚠️ Make sure that it is square and exactly 1000 pixels wide and high. Also turn on the "download" option for the image whilst posting it.</b>
+			<br>We will be using all of the entries where possible, which means if your entry does not fit these requirements it will be cropped and upscaled, which may be destructive to your art.</p>
 
-	         <p>❤️🧡💛💚💙💜
-	         <br><br>
-   	   </div>
-   	</div>
-   
-   	<!-- USER INDICATOR -->
-   	<div id="here-now">
-   		🌈<b class = "rainbow"> Here now:</b> <span id="clientCount">0</span>
-   	</div>
-   
-   	<!--- OPEN MODAL BUTTON -->
-   	<a id = "open-button">
-   		<div id="question">
-   			<span class = "rainbow">❓</span>
-   		</div>
-   	</a>
+		<h2>💌 Who can I contact about this?</h2>
+		<p>General questions about the collaboration can be sent to <a href = "https://sketchersunited.org/users/12271" class = "rainbow">@pelunkey</a> and <a href = "https://sketchersunited.org/users/9" class = "rainbow">@username</a>.
+			<br>This website is run by <a href ="https://sketchersunited.org/users/9" class = "rainbow">@username</a>. If there are any technical issues with the site please send me a message.
+			<br>The website is still under construction and there may be issues.</p>
 
-	<!--- SCRIPTS -->
-    <script src="script/modal.js"></script>
-    <script src="script/live.js"></script>
-    <script src="script/viewer.js"></script>
-	<script src="script/image_load.js"></script>
-	<script src="script/annotations.js"></script>
+		<p>❤️🧡💛💚💙💜
+			<br><br>
+	</div>
+</div>
+
+<!-- USER INDICATOR -->
+<div id="here-now">
+	🌈<b class = "rainbow"> Here now:</b> <span id="clientCount">Loading...</span>
+</div>
+
+<!--- OPEN MODAL BUTTON -->
+<a id = "open-button">
+	<div id="question">
+		<span class = "rainbow">❓</span>
+	</div>
+</a>
+
+
+
+<!--- SCRIPTS -->
+<script src="script/modal.js"></script>
+<script src="script/live.js"></script>
+<script src="script/viewer.js"></script>
+<script src="script/image_load.js"></script>
+<script src="script/annotations.js"></script>
 </body>
 </html>

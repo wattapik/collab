@@ -9,4 +9,6 @@ uses
 1. https://github.com/Deprecator16/OpenSeadragonSmartScrollZoom/
 2. https://github.com/openseadragon/openseadragon
 3. https://github.com/annotorious/annotorious-openseadragon
+   1. https://github.com/wattapik/recogito-client-core
+   2. ^ you have to build the above with the recogito core i have here 
 4. https://github.com/VoidVolker/MagickSlicer

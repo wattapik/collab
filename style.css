@@ -18,30 +18,30 @@ body {
 }
 
 .r6o-editor {
-	z-index: 3;
-	height: auto;
+    z-index: 3;
+    height: auto;
 }
 
 .r6o-widget.comment {
-	font-size: 1.5em;
-	background-color: #333
+    font-size: 1.5em;
+    background-color: #333
 }
 
 .r6o-editor .r6o-arrow:after {
-	background-color: #333;
-	border: 3px white solid;
+    background-color: #333;
+    border: 3px white solid;
 }
 
 .r6o-editor .r6o-editor-inner .r6o-widget {
-	border: 3px white solid;
+    border: 3px white solid;
 }
 
 .r6o-editor .r6o-editor-inner {
-	background-color: transparent !important;
+    background-color: transparent !important;
 }
 
 .r6o-footer {
-	display: none;
+    display: none;
 }
 
 div {
@@ -61,6 +61,10 @@ a {
     color: white;
     padding: 15px;
     z-index: 2;
+    background-color:#333;
+    border-radius: 1rem;
+    border: 3px solid white;
+    margin: 5pt;
 }
 
 #question {
@@ -99,7 +103,7 @@ a {
 }
 
 #banner {
-        max-width: 100%;
+    max-width: 100%;
 }
 #modal {
     display: none;
@@ -170,12 +174,40 @@ a {
     cursor: pointer;
 }
 
+#mobile-banner {
+    display:none;
+}
+
 @media screen and (max-width: 1081px) and (-webkit-min-device-pixel-ratio: 2) {
-	#viewer {
-		width: 100vw;
-		height: 66vh;
-	}
-	#modal-content {
-	    font-size: 20pt;
-	}
+    #viewer {
+        width: 100vw;
+        height: 66vh;
+        border-bottom: 3px white solid;
+    }
+    #modal-content {
+        font-size: 20pt;
+    }
+
+    #container {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #mobile-banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        height: 27vh;
+        overflow: hidden;
+        background-color: #444;
+    }
+
+    #mobile-banner img {
+        max-width: 90%;
+        max-height: 100%;
+    }
+
 }
