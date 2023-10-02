@@ -151,6 +151,27 @@ a {
     color: transparent;
 }
 
+.profile-container {
+    display:flex;
+    align-items: center;
+}
+
+.profileimg {
+    flex: 0 0 20%; /* 10% of the container's width, not flexible, not growing, not shrinking */
+    max-height: 100%;
+}
+
+.profileimg img {
+    width: 100%; /* Make sure the image fills its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%;
+}
+
+.profile {
+    flex: 1; /* Take up remaining space */
+    padding-left: 1rem; /* Add some space between image and text */
+}
+
 #close-button {
     position: absolute;
     font-size: 3rem;

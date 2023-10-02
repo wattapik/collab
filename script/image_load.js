@@ -1,21 +1,11 @@
 let dictionaries = []
-const imagePromises = [];
 let image_count = 0
 
 function load_image(image) {
-    return new Promise((resolve, reject) => {
-        viewer.addTiledImage({
-            tileSource: image.tileSource,
-            x: image.x,
-            y: image.y,
-            opacity: 1,
-            success: () => {
-                resolve();
-            },
-            error: (err) => {
-                reject(err);
-            },
-        });
+    viewer.addTiledImage({
+        tileSource: image.tileSource,
+        x: image.x,
+        y: image.y,
     });
 }
 
@@ -42,10 +32,9 @@ fetch('image/image.txt')
                     blue: parseInt(parts[5]),
                 };
 
-                const promise = load_image(dictionary);
+                load_image(dictionary);
 
                 dictionaries.push(dictionary);
-                imagePromises.push(promise);
                 image_count++;
             }
         });
