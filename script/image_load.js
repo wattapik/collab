@@ -38,6 +38,7 @@ fetch('image/image.txt')
                 image_count++;
             }
         });
+        document.getElementById("current").innerText = `Currently we are featuring ${image_count} images.`;
     })
     .catch(error => {
         console.error('Error:', error);

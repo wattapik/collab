@@ -43,7 +43,22 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
             self.write_message(response.body)
 
         except Exception as e:
-            print(f"Error handling message: {e}")
+            if str(e) == "HTTP 404: Not Found":
+                try:
+                    user_url = f"https://sketchersunited.org/users/{user}"
+
+                    headers = {
+                        "Accept": "application/json",
+                    }
+                    request = HTTPRequest(user_url, method="GET", headers=headers)
+
+                    http_client = AsyncHTTPClient()
+                    response = await http_client.fetch(request)
+                    self.write_message(response.body)
+                except Exception as f:
+                    print(f"Error getting user page: {f}")
+            else:
+                print(f"Error getting post page: {e}")
 
     def on_message(self, message):
         tornado.ioloop.IOLoop.current().add_callback(self.handle_message, message)
